@@ -76,11 +76,9 @@ sampleJson = {
 
 json_file = 'sample.json'
 
-with open(json_file, 'w') as file_obj:
-    json.dump(sampleJson, file_obj, indent=6)
 
 print(sampleJson['company']['employee']['payable']['salary'])
-sampleJson['company']['employee']['name'] = '30/12/1992'
+sampleJson['company']['employee']['birth_day'] = '30/12/1992'
 print(sampleJson)
 
 with open(json_file, 'w') as file_obj:

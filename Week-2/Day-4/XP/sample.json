@@ -5,7 +5,8 @@
                   "payable": {
                         "salary": 7000,
                         "bonus": 800
-                  }
+                  },
+                  "birth_day": "30/12/1992"
             }
       }
 }
