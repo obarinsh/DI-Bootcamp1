@@ -1,0 +1,49 @@
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    /* border: 1px solid blue; */
+    background-color: rgb(200, 199, 199);
+}
+
+#wrap {
+    height: 100%;
+    /* width: 100px; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    /* background-color: red; */
+
+}
+
+.button {
+    padding: 0.6em 2em;
+    border: none;
+    outline: none;
+    color: rgb(55, 52, 52);
+    background: #beb26d;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    animation: glowing-button 1.5s infinite alternate;
+    transition: opacity 0.3s ease-in-out;
+    box-shadow: 0 0 5px #beb26d, 0 0 10px #beb26d, 0 0 15px #beb26d;
+}
+
+/* Define the glowing effect */
+@keyframes glowing-button {
+    0% {
+        box-shadow: 0 0 5px #beb26d, 0 0 10px #beb26d, 0 0 15px #beb26d;
+    }
+
+    100% {
+        box-shadow: 0 0 10px #e8d66d, 0 0 20px #e8d66d, 0 0 30px #e8d66d;
+    }
+}
