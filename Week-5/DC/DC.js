@@ -4,32 +4,27 @@ let form = document.getElementById('form')
 let listTask = document.getElementsByClassName('listTasks')[0]
 const tasks = []
 function addTask() {
+    let taskInput = document.getElementById('task');
+
     let xButton = document.createElement('button')
-    xButton.innerHTML = '<i class="fas fa-times"></i>'
-    xButton.style.marginLeft = "20px"
-    xButton.style.height = "30px"
-    xButton.style.width = "30px"
-    xButton.style.marginRight = "10px"
-    // xButton.style.background = "none"
-    xButton.style.color = "red"
-    xButton.style.fontSize = "16px"
+
+
+    xButton.innerHTML = '✖'; // Add "X" symbol
+    xButton.style.marginRight = "10px";
+    xButton.style.cursor = "pointer";
+
 
     let userTask = document.getElementById('task').value
+    if (!userTask) return;
     tasks.push(userTask)
     let li = document.createElement('li')
-    li.style.display = "flex"
-    li.style.alignItems = "center"
-    li.style.marginBottom = "5px"
 
     let checkbox = document.createElement('input')
     checkbox.type = "checkbox"
+    checkbox.style.marginRight = "10px"
 
-    checkbox.style.marginLeft = "10px"
-
-    li.textContent = userTask
-    li.appendChild(xButton)
-    li.appendChild(checkbox)
-    listTask.appendChild(li)
+    let taskText = document.createElement('span');
+    taskText.textContent = userTask;
 
     xButton.addEventListener("click", function () {
         let index = tasks.indexOf(userTask)
@@ -38,7 +33,26 @@ function addTask() {
         }
         li.remove()
     })
+    checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+            taskText.style.textDecoration = "line-through";
+            taskText.style.color = "gray";
+        } else {
+            taskText.style.textDecoration = "none";
+            taskText.style.color = "black";
+        }
+    });
 
+
+
+    li.appendChild(xButton)
+    li.appendChild(checkbox)
+    li.appendChild(taskText);
+    listTask.appendChild(li);
+
+
+    taskInput.value = "";
+    userTask.focus();
 }
 button.addEventListener("click", function (event) {
     event.preventDefault()

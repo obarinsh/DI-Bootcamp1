@@ -1,0 +1,101 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-color: pink;
+    border: 1px solid black
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60%;
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 4px 4px 8px #aaa, -4px -4px 8px #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Antic Didone', serif;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#submit {
+    margin-left: 20px;
+    margin-right: 10px;
+    height: 64px;
+    width: 64px;
+    color: brown;
+    font-size: 14px;
+    font-family: 'Antic Didone', serif;
+    font-weight: bolder;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+#submit:hover {
+    box-shadow: 4px 4px 8px #aaa, -4px -4px 8px #fff;
+}
+
+
+.listTasks {
+    color: grey;
+    width: 60%;
+    margin-top: 20px;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 4px 4px 8px #aaa, -4px -4px 8px #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Antic Didone', serif;
+}
+
+#task {
+    height: 50px;
+    flex: 1;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Antic Didone', serif;
+    border: 1px solid #aaa;
+    border-radius: 16px;
+}
+
+#submit::before {
+    color: brown;
+    background-color: grey;
+    font-size: 12px;
+    text-align: center;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
