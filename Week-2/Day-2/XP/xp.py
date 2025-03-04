@@ -197,7 +197,7 @@ class Family:
     def born(self, new_baby):
         baby_name = new_baby["name"]
         self.members.append(new_baby)
-        print(f'Congratulations on your new {baby_name}')
+        print(f'Congratulations on your new baby {baby_name}')
 
 # is_18: takes the name of a family member as a parameter and returns True if they are over 18 and False if not.
 

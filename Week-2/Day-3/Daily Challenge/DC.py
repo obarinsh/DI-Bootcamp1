@@ -13,27 +13,38 @@
 # Be able to put them in a list and sort them
 # Bonus (not mandatory) : Install the Turtle module, and draw the sorted circles
 import turtle
+import math
 
 
 class Circle:
 
-    def __init__(self, diameter):
-        self.diameter = diameter
+    def __init__(self, radius=None, diameter=None):
+        if radius is not None:
+            self.radius = radius
+            self.diameter = radius * 2
+        elif diameter is not None:
+            self.diameter = diameter
+            self.radius = diameter / 2
+        else:
+            raise ValueError("provide radius or diameter")
+
+    def area(self):
+        return math.pi * self.radius ** 2
 
     def __add__(self, other):
-        return Circle(self.diameter+other.diameter)
+        return Circle(radius=self.radius + other.radius)
 
     def __repr__(self):
-        return {self.diameter}
+        return f"Circle(radius={self.radius}, diameter={self.diameter}, area={self.area():.2f})"
 
     def __eq__(self, other):
-        return self.diameter == other.diameter
+        return self.radius == other.radius
 
     def __lt__(self, other):
-        return self.diameter < other.diameter
+        return self.radius < other.radius
 
     def __gt__(self, other):
-        return self.diameter > other.diameter
+        return self.radius > other.radius
 
 
 circles = []
@@ -57,3 +68,7 @@ t = turtle.Turtle()
 t.circle(sorted_circles)
 
 turtle.done()
+
+
+# Daily Challenge: The class you built only accepts the diameter parameter and doesn't account for the radius, and the method to compute the area is missing
+# #

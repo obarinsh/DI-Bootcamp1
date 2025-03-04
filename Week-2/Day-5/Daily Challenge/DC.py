@@ -70,12 +70,12 @@ class Deck:
         return self.cards.pop() if self.cards else None
 
     def __str__(self):
-        return f"Deck has {len(self.cards)} cards left"
+        return f'Deck has {len(self.cards)} cards left'
 
 
 deck = Deck()
 print(deck)
 deck.shuffle()
 card = deck.deal()
-print(f"Dealt card: {card}")
+print(f'Dealt card: {card}')
 print(deck)
