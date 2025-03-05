@@ -1,235 +1,130 @@
-// 🌟 Exercise 1 : Scope
+// Exercise 1 : Colors
 // Instructions
-// Analyse the code below, and predict what will be the value of a in all the following functions.
-// Write your prediction as comments in a js file. Explain your predictions.
-// #1
-// function funcOne() {
-//     const a = 5;
-//     if (a > 1) {
-//         a = 3
-//     }
-//     alert(`inside the funcOne function ${a}`)
-// }
+// Using this array :
 
-// // #1.1 - run in the console:
-// funcOne()
-// #1.2 What will happen if the variable is declared 
-// with const instead of let ?
-// Answer:Variables declared with const cannot be re-declared in the same scope
+// const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 
-//#2
-// const a = 0;
-// function funcTwo() {
-//     a = 5;
-// }
+// colors.forEach((color, index) => {
+//     console.log(`${index + 1}# choise is ${color}`)
+// })
 
-// function funcThree() {
-//     alert(`inside the funcThree function ${a}`);
-// }
-
-// // #2.1 - run in the console:
-// funcThree()
-// funcTwo()
-// funcThree()
-// #2.2 What will happen if the variable is declared 
-// with const instead of let ?
-// Answer: funcTwo() wont Worker, since we are trying reassign global var in local scope
-
-
-// //#3
-// function funcFour() {
-//     window.a = "hello";
-// }
-
-
-// function funcFive() {
-//     alert(`inside the funcFive function ${a}`);
-// }
-
-// // // #3.1 - run in the console:
-// funcFour()
-// funcFive()
-
-// Answer: in funcFour() wont have anything since func doesnt return or print output, but funcFive will grab 
-// the variable in funcFour
-// //#4
-// let a = 1;
-// function funcSix() {
-//     const a = "test";
-//     alert(`inside the funcSix function ${a}`);
-// }
-
-
-// // #4.1 - run in the console:
-// funcSix()
-// // #4.2 What will happen if the variable is declared 
-// // with const instead of let ?
-// // Answer: it doesnt matter since its a local var, can use let or const
-
-// //#5
-// const a = 2;
-// if (true) {
-//     const a = 5;
-//     alert(`in the if block ${a}`);
-// }
-// alert(`outside of the if block ${a}`);
-
-// #5.1 - run the code in the console
-// #5.2 What will happen if the variable is declared 
-// with const instead of let ?
-// Answer:both will work since both are block scoped
-
-// 🌟 Exercise 2 : Ternary operator
-// Instructions
-// Using the code below:
-
-// function winBattle() {
-//     return true;
-// }
-
-// Transform the winBattle() function to an arrow function.
-// const winBattle = () => true
-// // Create a variable called experiencePoints.
-// var experiencePoints = winBattle() ? 10 : 1
-// console.log(experiencePoints)
-// Assign to this variable, a ternary operator.
-//  If winBattle() is true, the experiencePoints
-//   variable should be equal to 10, else the
-//    variable should be equal to 1.
-// Console.log the experiencePoints variable.
-
-
-// 🌟 Exercise 3 : Is it a string ?
-// Instructions
-// Write a JavaScript arrow function that checks whether 
-// the value of the argument passed, is a string or not. 
-// The function should return true or false
-// Check out the example below to see the expected output
-// Example:
-
-// console.log(isString('hello')); 
-//true
-// console.log(isString([1, 2, 4, 0]));
-//false
-
-// function isString(value) {
-//     if (typeof (value) === 'string') {
-//         return true
+// colors.some((color) => {
+//     if (color === 'Violet') {
+//         console.log('Yeah')
 //     } else {
-//         return false
+//         console.log('No....')
 //     }
-// }
+// })
 
-// const isString = value => typeof (value) === 'string' ? true : false
 
-// console.log(isString(123))
-// console.log(isString('hello'))
+// Write a JavaScript program that displays the colors in the following order : 
+// “1# choice is Blue.” “2# choice is Green.” “3# choice is Red.” ect…
+// Check if at least one element of the array is equal to the value “Violet”. If yes, 
+// console.log("Yeah"), else console.log("No...")
+// Hint : Use the array methods taught in class. Look at the lesson Array Methods.
 
-// 🌟 Exercise 4 : Find the sum
+
+// 🌟 Exercise 2 : Colors #2
 // Instructions
-// Create a one line function (ie. an arrow function)
-//  that receives two numbers as parameters and returns the sum.
+// Using these arrays :
 
-// const sum = (a, b) => a + b
+// const colors = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
 
-// console.log(sum(2, 3))
+// const ordinal = ["th", "st", "nd", "rd"];
 
-// 🌟 Exercise 5 : Kg and grams
+// colors.forEach((color, i) => {
+//     let ending = i + 1
+//     let suffix = (ending % 10 === 1 && ending !== 11) ? "st" :
+//         (ending % 10 === 2 && ending !== 12) ? "nd" :
+//             (ending % 10 === 3 && ending !== 13) ? "rd" : "th";
+
+//     console.log(`${ending}${suffix} choice is ${color}.`);
+// });
+
+// Write a JavaScript program that displays the colors in the following order : “1st choice is Blue .” “2nd choice is Green.” “3rd choice is Red.” ect…
+// Hint : Use the array methods taught in class and ternary operator.
+
+
+// Exercise 3 : Analyzing
 // Instructions
-// Create a function that receives a weight in 
-// kilograms and returns it in grams. (Hint: 1 kg is 1000gr)
+// Analyze these pieces of code before executing them. What will be the outputs ?
+// ------1------
+// const fruits = ["apple", "orange"];
+// const vegetables = ["carrot", "potato"];
 
-// First, use function declaration and invoke it.
-// console.log(convert(4))
-// function convert(weightKg) {
-//     let weightGrm = weightKg * 1000
-//     return weightGrm
-// }
-// Then, use function expression and invoke it.
-// const convert = function (weightKg) {
-//     let weightGrm = weightKg * 1000
-//     return weightGrm
-// }
-// console.log(convert(4))
-// Write in a one line comment, the difference between
-//  function declaration and function expression.
-// Function declaration is hoisted and can be called before the function and stored memory during initial code scan to save place for this function.
-// Function expression can be called after function only(not hoisted) and can be named or anonymus.
+// const result = ['bread', ...vegetables, 'chicken', ...fruits];
+// console.log(result);
+// Will print all var together in an array
 
-// Finally, use a one line arrow function and invoke it.
-// const convert = (weightKg) => weightKg * 1000
-// console.log(convert(8))
+// ------2------
+// const country = "USA";
+// console.log([...country]);
+// ['U', 'S', 'A']
+// ------Bonus------
+// let newArray = [...[, ,]];
+// console.log(newArray);
 
-// 🌟 Exercise 6 : Fortune teller
+
+// 🌟 Exercise 4 : Employees
 // Instructions
-// Create a self invoking function that takes 
-// 4 arguments: number of children, partner’s name,
-//  geographic location, job title.
-// The function should display in the DOM a sentence like 
-// "You will be a <job title> in <geographic location>, 
-// and married to <partner's name> with <number of children> kids."
+// Using this array:
 
-// (function (numOfChildren, prtnrName, location, jobTitle) {
-//     console.log(`You will be a ${jobTitle} in ${location}, 
-// and married to ${prtnrName} with ${numOfChildren} kids.`)
-// })(4, 'Shushu', 'Canzas', 'ganan')
+const users = [{ firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
+{ firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
+{ firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
+{ firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
+{ firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
+{ firstName: 'Wes', lastName: 'Reid', role: 'Instructor' },
+{ firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor' }];
+// // Using the map() method, push into a new array the firstname of the user and
+// //  a welcome message. You should get an array that looks like this :
+// // const welcomeStudents = ["Hello Bradley", "Hello Chloe", "Hello Jonathan",
+// //  "Hello Michael", "Hello Robert", "Hello Wes", "Hello Zach"]
+// const welcomeStudents = users.map(user => `Hello ${user.firstName}`)
+// console.log(welcomeStudents)
 
-// 🌟 Exercise 7 : Welcome
+
+// 2. Using the filter() method, create a new array, containing only the Full Stack Residents.
+// const residents = users.filter(user => user.role === 'Full Stack Resident')
+// console.log(residents)
+
+// 3. Bonus : Chain the filter method with a map method, to return an array containing only the lastName of the Full Stack Residents.
+// const fullStStudents = users
+//     .filter(user => user.role === 'Full Stack Resident')
+//     .map(user => user.lastName)
+// console.log(fullStStudents)
+
+
+
+// 🌟 Exercise 5 : Star Wars
 // Instructions
-// John has just signed in to your website and you want to
-//  welcome him.
+// Using this array 
+// const epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+// let starWars = epic.reduce((acc, space) => acc + ' ' + space)
+// console.log(starWars)
 
-// Create a Navbar in your HTML file.
-// In your js file, create a self invoking funtion that 
-// takes 1 argument: the name of the user that just signed in.
-// The function should add a div in the nabvar, displaying 
-// the name of the user and his profile picture.
-// (function (userName) {
-//     let newDiv = document.createElement('div')
-//     let navBar = document.getElementsByTagName('nav')[0]
-//     navBar.appendChild(newDiv)
-//     newDiv.innerText = userName
-//     let profilePic = document.createElement("img");
-//     profilePic.src = "alejandro.avif"
-//     newDiv.appendChild(profilePic)
-//     console.log(`User name:${userName}`)
-// })('Alejandro')
+// Use the reduce() method to combine all of these into a single string.
 
-// 🌟 Exercise 8 : Juice Bar
+
+// 🌟 Exercise 6 : Employees #2
 // Instructions
-// You will use nested functions, to open a new juice bar.
+// Using this object:
 
-// Part I:
-// The outer function named makeJuice receives 1 argument: the size of the beverage the client wants - small, medium or large.
-// function makeJuice(size) {
-//     let ingredients = []
-//     function addIngredients(firstIng, secIng, thirdIng) {
-//         ingredients.push(firstIng, secIng, thirdIng)
-//         console.log(`The client wants a ${size} juice, containing ${firstIng}, ${secIng}, ${thirdIng}
-//             `)
-//     }
-//     function displayJuice() {
-//         console.log(`The client wants a ${size} juice, containing ${ingredients}
-//                 `)
-//     }
-//     addIngredients("mango", "banana", "kayle")
-//     addIngredients("beet", "spinach", "orange")
-//     displayJuice()
-// }
+const students = [{ name: "Ray", course: "Computer Science", isPassed: true },
+{ name: "Liam", course: "Computer Science", isPassed: false },
+{ name: "Jenner", course: "Information Technology", isPassed: true },
+{ name: "Marco", course: "Robotics", isPassed: true },
+{ name: "Kimberly", course: "Artificial Intelligence", isPassed: false },
+{ name: "Jamie", course: "Big Data", isPassed: false }];
+// Using the filter() method, create a new array, containing the students that passed the course.
+// Bonus : Chain the filter method with a forEach method, to congratulate the students with their
+//  name and course name (ie. “Good job Jenner, you passed the course in 
+// Information Technology”, “Good Job Marco you passed the course in Robotics” ect…)
 
-// makeJuice("large")
-// The inner function named addIngredients receives 3 ingredients, and displays on the DOM a sentence like The client wants a <size drink> juice, containing <first ingredient>, <second ingredient>, <third ingredient>".
+const passed = students
+    .filter(student => student.isPassed === true)
+console.log(passed)
+passed.forEach(student => {
+    console.log(`Good job ${student.name}, you passed the course in ${student.course}`)
 
-// Invoke the inner function ONCE inside the outer function. Then invoke the outer function in the global scope.
-
-
-// Part II:
-// In the makeJuice function, create an empty array named ingredients.
-
-// The addIngredients function should now receive 3 ingredients, and push them into the ingredients array.
-
-// Create a new inner function named displayJuice that displays on the DOM a sentence like The client wants a <size drink> juice, containing <first ingredient>, <second ingredient>, <third ingredient>".
-
-// The client wants 6 ingredients in his juice, therefore, invoke the addIngredients function TWICE. Then invoke once the displayJuice function. Finally, invoke the makeJuice function in the global scope.
-
-
+})
