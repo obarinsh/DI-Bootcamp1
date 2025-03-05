@@ -1,55 +1,75 @@
-// // Exercise 1 : Nested functions
-// // Using the code below, and before executing it, predict the outcome and explain how you came to this conclusion.
+// Exercise 1 : print Full Name
+// Instructions
+// Create a function called printFullName.
+// The function should return a string like the example below
+// printFullName({first: 'Elie', last:'Schoppik'}) 
+// 'Your full name is Elie Schoppik`
 
-// // Change the code below to nested arrow functions.
-// const landscape = () => {
-//     let result = "";
-//     const flat = (x) => {
-//         for (let count = 0; count < x; count++) {
-//             result = result + "_";
-//         }
-//     }
-//     flat(4);
-//     const mountain = (x) => {
-//         result = result + "/"
-//         for (let counter = 0; counter < x; counter++) {
-//             result = result + "'"
-//         }
-//         result = result + "\\"
-//     }
-//     mountain(4);
-//     flat(4);
-//     return result;
+// function printFullName(userInfo) {
+//     const { first, last } = userInfo
+//     console.log(`Your full name is ${first} ${last}`)
+// }
+// printFullName({ first: 'Elie', last: 'Schoppik' })
+
+// // Destructure this object directly from the parameters
+// //  (ie. Look at the Advanced Object lesson - Part II :
+// //      Object destructuring used as an assignment to a function)
+
+// // The output of the printFullName function should be the exact 
+// // same as the displayStudentInfo function. (Exercise XP)
+// function printFullName({ first, last }) {
+//     console.log(`Your full name is ${first} ${last}`)
+// }
+// printFullName({ first: 'Elie', last: 'Schoppik' })
+
+
+// Exercise 2 : keys and values
+// Instructions
+// Create a function that takes an object and returns the keys and values
+//  as separate arrays.
+
+// console.log(keysAndValues({ a: 1, b: 2, c: 3 }))
+// console.log(keysAndValues({ a: "Apple", c: "Microsoft", b: "Google" }))
+// function keysAndValues(object) {
+//     let objectArr = []
+//     let arrKeys = Object.keys(object).sort()
+//     let arrValue = Object.values(object)
+//     objectArr.push(arrKeys)
+//     objectArr.push(arrValue)
+//     return objectArr
 // }
 
-// console.log(landscape())
-// Result should be :_ _ _ _ /''''\_ _ _ _ 
+// Return the keys sorted alphabetically, and their corresponding values 
+// in the same order.
+// Examples
+// keysAndValues({ a: 1, b: 2, c: 3 })
+// ➞ [["a", "b", "c"], [1, 2, 3]]
 
-// Exercise 2 : Closure
+// keysAndValues({ a: "Apple", b: "Microsoft", c: "Google" })
+// ➞ [["a", "b", "c"], ["Apple", "Microsoft", "Google"]]
+
+// keysAndValues({ key1: true, key2: false, key3: undefined })
+// ➞ [["key1", "key2", "key3"], [true, false, undefined]]
+
+
+// Exercise 3 : Counter class
 // Instructions
-// Analyse the code below, and before executing it, predict the outcome of the last line.
-const addTo = x => y => x + y;
-const addToTen = addTo(10);
-addToTen(3);
+// Analyze the code below, what will be the output?
+// class Counter {
+//     constructor() {
+//         this.count = 0;
+//     }
 
+//     increment() {
+//         this.count++;
+//     }
+// }
 
-// Exercise 3 : Currying
-// Instructions
-// Analyse the code below, and before executing it, predict the outcome of the last line.
-// const curriedSum = (a) => (b) => a + b
-// curriedSum(30)(1)
+// const counterOne = new Counter();
+// counterOne.increment(); //1
+// counterOne.increment();//2
 
+// const counterTwo = counterOne;
+// counterTwo.increment(); //3
 
-// Exercise 4 : Currying
-// Analyse the code below, and before executing it, predict the outcome of the last line.
-// const curriedSum = (a) => (b) => a + b
-// const add5 = curriedSum(5)
-// add5(12)
-
-
-// Exercise 5 : Composing
-// Analyse the code below, and before executing it, predict the outcome of the last line.
-// const compose = (f, g) => (a) => f(g(a));
-// const add1 = (num) => num + 1;
-// const add5 = (num) => num + 5;
-// compose(add1, add5)(10)
+// console.log(counterOne.count); //3
