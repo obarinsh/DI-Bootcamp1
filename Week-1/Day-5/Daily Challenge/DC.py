@@ -27,17 +27,17 @@
 
 
 def longest_word(sentence):
-    longest_word=''
+    longest_word = ''
     word_list = sentence.split()
     for word in word_list:
-        word_length=len(word)
+        word_length = len(word)
         if word_length > len(longest_word):
-            longest_word=word
+            longest_word = word
     return longest_word
+
 
 print(longest_word('Haliluya i f.inished all these homeworkkkkk'))
 print(longest_word('all of this words will be short'))
 print(longest_word("Margaret's toy is a pretty doll."))
 print(longest_word("A thing of beauty is a joy forever."))
 print(longest_word("Forgetfulness is by all means powerless!"))
-

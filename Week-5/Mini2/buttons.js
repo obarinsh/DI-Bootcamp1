@@ -43,7 +43,7 @@ let buttons = document.getElementsByClassName('button');
 
 for (let button of buttons) {
     button.addEventListener("click", () => {
-        let sound = new Audio(sounds[button.id]); // Get sound from the object
+        let sound = new Audio(sounds[button.id]);
         sound.play();
     });
 }
