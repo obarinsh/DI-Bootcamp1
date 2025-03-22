@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Guess the Emoji!</h1>
+
+    <button id="startBtn">Start Game</button>
+
+    <div id="quiz" style="display: none;">
+        <p id="emoji" style="font-size: 3rem"></p>
+
+        <form id="quizForm">
+            <div id="options"></div>
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="result"></p>
+        <p id="playerScore">Score: 0</p>
+        <button id="submitScoreBtn">Submit Score</button>
+
+        <h2>🏆 Leaderboard</h2>
+        <ul id="leaderboardList"></ul>
+    </div>
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
