@@ -1,0 +1,8 @@
+
+You will use the React Responsive Carousel Package to create the carousel.
+
+In your App component make sure to use the corresponding imports of the installed package
+
+Click on the links below, to retrieve the images for your carousel:
+Hong Kong, Macao, Japan, Las Vegas
+
