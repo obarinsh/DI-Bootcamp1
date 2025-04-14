@@ -5,7 +5,6 @@ function UserData() {
     const dispatch = useDispatch()
 
     const displayUserData = () => {
-        console.log('🟡 Dispatching fetchUser...')
         dispatch(fetchUser(2))
     }
     return (<div>
