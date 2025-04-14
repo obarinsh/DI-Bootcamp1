@@ -7,12 +7,14 @@ import Calendar from './components/Calendar'
 import SelectDay from './components/SelectDay'
 import TaskManager from './components/TaskManager'
 function App() {
-  const week = useSelector((state) => state)
+  const week = useSelector((state) => state.week)
   const [filteredDay, setFilteredDay] = useState('')
 
 
-  const selected = week.find((day) => day.day === filteredDay)
-
+  const selected = week?.find((day) => day.day === filteredDay)
+  if (!week || !Array.isArray(week)) {
+    return <p>Loading or no data</p>
+  }
   return (
     <div>
       <h1>Task Manager</h1>

@@ -1,5 +1,11 @@
-import { createStore } from 'redux'
-import { taskReducer } from '../features/reducer'
-const store = createStore(taskReducer)
 
+
+import { createStore, combineReducers } from 'redux'
+import { taskReducer } from '../features/reducer'
+
+const rootReducer = combineReducers({
+    week: taskReducer
+})
+
+const store = createStore(rootReducer)
 export default store

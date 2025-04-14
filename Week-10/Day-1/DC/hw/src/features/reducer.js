@@ -4,7 +4,8 @@ const initialState = [
         tasks: [
             {
                 id: 1,
-                task: 'Buy groceries'
+                task: 'Buy groceries',
+                completed: false
             }
         ]
     },
@@ -53,21 +54,33 @@ export function taskReducer(state = initialState, action) {
 
             return state.filter(task => task.id !== action.payload)
         case 'editTask':
-            return state.map(day =>
-                day.day === action.payload.day
-                    ? {
-                        ...day,
-                        tasks: day.tasks.map(task =>
-                            task.id === action.payload.id
-                                ? { ...task, task: action.payload.taskText }
-                                : task
-                        )
-                    }
-                    : day)
+            return state.map((day) => {
+                if (day.day !== action.payload.day) return day
+                return {
+                    ...day,
+                    tasks: day.tasks.map((task) =>
+                        task.id === action.payload.id
+                            ? { ...task, task: action.payload.newText }
+                            : task
+                    )
+                }
+            })
+
+        case 'filterTask':
+            return state.map((day) => {
+                if (day.day !== action.payload.day) return day
+                return {
+                    ...day,
+                    tasks: day.tasks.map((task) =>
+                        task.id === action.payload.id
+                            ? { ...task, completed: !task.completed }
+                            : task
+                    )
+                }
+            })
+
+
         default:
             return state
-
-
-
     }
 }

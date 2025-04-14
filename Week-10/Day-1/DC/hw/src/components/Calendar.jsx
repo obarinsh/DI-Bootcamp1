@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 
 
 function Calendar() {
-    const week = useSelector(state => state)
+    const week = useSelector(state => state.week)
     return (
         <div className="calendar grid grid-cols-1 md:grid-cols-7 gap-4 p-4">
             {week.map((dayObj) => (
